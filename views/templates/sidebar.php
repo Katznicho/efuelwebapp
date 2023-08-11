@@ -11,13 +11,13 @@ $current_authenticated_user_permissions = $_SESSION['permissions'];
 <div  class="sideBar-color">
     <aside class="main-sidebar sidebar-dark-primary elevation-4 sideBar-color">
         <a href="#" class="brand-link">
-            <img src="/efuelwebapp/dist/img/logo.png" alt="credit plus" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Credit Plus</span>
+            <img src="/efuelwebapp/dist/img/e-fuel.png" alt="credit plus" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">E-Fuel</span>
         </a>
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="/efuelwebapp/dist/img/logo.png" class="img-circle elevation-2" alt="User Image">
+                    <img src="/efuelwebapp/dist/img/e-fuel.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">

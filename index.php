@@ -30,7 +30,7 @@ if(isset($_SESSION['user'])) header('Location:views/dashboard/index.php');
 		<!-- /.login-logo -->
 		<div class="card card-outline card-primary">
 			<div class="card-header text-center">
-				<a href="#" class="h1"><b>CREDIT </b>PLUS</a>
+				<a href="#" class="h1"><b>E </b>FUEL</a>
 			</div>
 			<div class="card-body">
 				<p class="login-box-msg">Sign in to start your session</p>
