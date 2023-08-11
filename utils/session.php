@@ -8,7 +8,7 @@
 
 session_start();
 
-$fallback = "Location:/creditpluswebapp/index.php";
+$fallback = "Location:/efuelwebapp/index.php";
 
 if(empty($_SESSION) || !isset($_SESSION['user']) || (isset($_SESSION['roles']) && empty($_SESSION['roles']))){
 

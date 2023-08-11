@@ -4,7 +4,7 @@
 // MySQL Configuration :
 // ------------------------
 
-$db['host'] = "localhost";
+$db['host'] = "code";
 $db['user'] = "root";
 $db['pass'] = "!Log10tan10";
 $db['name'] = "root";
