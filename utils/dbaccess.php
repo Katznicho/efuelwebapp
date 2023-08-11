@@ -5,7 +5,7 @@ class DbAccess
     public $conn;
     private $mysqlKeyWords;
     private $host = 'localhost';
-    private $username = 'root';
+    private $username = 'code';
     private $password = '';
 
     //private $password = '!Log10tan10';
