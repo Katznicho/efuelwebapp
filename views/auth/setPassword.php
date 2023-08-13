@@ -63,7 +63,7 @@ if (isset($_GET['token'])) {
         ?>
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="#" class="h1"><b>CREDIT </b>PLUS</a>
+                <a href="#" class="h1"><b>E </b>FUEL</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">set password to start your session</p>
