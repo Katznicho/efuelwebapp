@@ -29,14 +29,14 @@ if (isset($_POST["activate"])) {
         $_SESSION['info'] = "Cannot activate boda user because the stage is not yet active!!Please Activate the stage";
         header("Location:index.php");
     }
-    $message = "Hello " . $allbodaUser[0]["bodaUserName"] . " Your  have been activated on CreditPlus Dail *217*212# to get started Remember your one time pin is " . $oneTymPin;
+    $message = "Hello " . $allbodaUser[0]["bodaUserName"] . " Your  have been activated on E-Fuel Dail *217*212# to get started Remember your one time pin is " . $oneTymPin;
     //die("done");
     // $allbodaUser =  $dbAccess->select("bodauser", ["bodaUserName", "bodaUserPhoneNumber"], ["bodaUserId" => $bodaUserId]);
 
     // $sms->sendsms(
     //     $allbodaUser[0]["bodaUserName"],
     //     $sms->formatMobileInternational($allbodaUser[0]["bodaUserPhoneNumber"]),
-        // "Hello " . $allbodaUser[0]["bodaUserName"] . " Your  have been activated on CreditPlus Dail *217*212# to get started Remember your one time pin is " . $oneTymPin
+        // "Hello " . $allbodaUser[0]["bodaUserName"] . " Your  have been activated on E-Fuel Dail *217*212# to get started Remember your one time pin is " . $oneTymPin
     // );
     
     $res = $sms->sms_faster($message , array($sms->formatMobileInternational($allbodaUser[0]["bodaUserPhoneNumber"])), 1);

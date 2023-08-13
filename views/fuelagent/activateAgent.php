@@ -35,12 +35,12 @@ if (isset($_POST["activate"])) {
     //die("done");
     else {
         $fuelAgent =  $dbAccess->select("fuelagent", ["fuelAgentName", "fuelAgentPhoneNumber"], ["fuelAgentId" => $agent]);
-        $mesage =  "Hello " . $fuelAgent[0]["fuelAgentName"] . " Your  have been activated on CreditPlus Dail *217*212# to get started Remember your 
+        $mesage =  "Hello " . $fuelAgent[0]["fuelAgentName"] . " Your  have been activated on E-Fuel Dail *217*212# to get started Remember your 
         one time pin is " . $oneTymPin;
         // $sms->sendsms(
         //     $fuelAgent[0]["fuelAgentName"],
         //     $sms->formatMobileInternational($fuelAgent[0]["fuelAgentPhoneNumber"]),
-            // "Hello " . $fuelAgent[0]["fuelAgentName"] . " Your  have been activated on CreditPlus Dail *217*212# to get started Remember your 
+            // "Hello " . $fuelAgent[0]["fuelAgentName"] . " Your  have been activated on E-Fuel Dail *217*212# to get started Remember your 
             //     one time pin is " . $oneTymPin
         // );
         $res = $sms->sms_faster($message , array($sms->formatMobileInternational($fuelAgent[0]["fuelAgentPhoneNumber"])), 1);

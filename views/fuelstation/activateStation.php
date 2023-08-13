@@ -27,7 +27,7 @@ if (isset($_POST["activate"])) {
     
     if(count($fuelAgents) > 0){
         for ($i = 0; $i < count($fuelAgents); $i++) {
-            $message =  "Hello " . $fuelAgents[$i]["fuelAgentName"] . " Your  have been activated on CreditPlus Dail *217*212# to get started Remember your one time pin is " . $oneTymPin;
+            $message =  "Hello " . $fuelAgents[$i]["fuelAgentName"] . " Your  have been activated on E-Fuel Dail *217*212# to get started Remember your one time pin is " . $oneTymPin;
             $res = $sms->sms_faster($message , array($sms->formatMobileInternational($fuelAgents[$i]["fuelAgentPhoneNumber"])), 1);
 
         }
