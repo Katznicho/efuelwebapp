@@ -35,7 +35,7 @@ if (isset($_POST['request'])) {
             //update
 
             $localLink = "localhost/creditpluswebapp/views/auth/setPassword.php?token=$hashedPass";
-            $serverLink = "http://app.creditplus.ug/creditpluswebapp/views/auth/setPassword.php?token=$hashedPass";
+            $serverLink = "http://207.154.233.21/efuelwebapp/views/auth/setPassword.php?token=$hashedPass";
             $linkToSend = "";
             $ip_address = $_SERVER['REMOTE_ADDR'];
 
@@ -49,7 +49,7 @@ if (isset($_POST['request'])) {
 
             //send email
             $message = "<P>We received a notification that you forgot your password   <a href=" . $linkToSend . ">click here to reset password</a></P> ";
-            $mailer->sendMail("CreditPlus", $_POST['email'], "Password Recovery", $message);
+            $mailer->sendMail("E-Fuel", $_POST['email'], "Password Recovery", $message);
             $activity->logActivity(
                 $emailExists[0]['name'],
                 "Forgot password request ",
@@ -58,12 +58,12 @@ if (isset($_POST['request'])) {
                 $emailExists[0]['gender']
             );
             $_SESSION['requestPasswordSuccess'] = "A recovery password link has been sent to your email";
-            header("Location:/creditpluswebapp/forgotpassword.php");
+            header("Location:/efuelwebapp/forgotpassword.php");
         } else {
             $_SESSION['requestPasswordError'] = "Email doesnot exist";
-            header("Location:/creditpluswebapp/forgotpassword.php");
+            header("Location:/efuelwebapp/forgotpassword.php");
         }
     }
 } else {
-    header("Location:/creditpluswebapp/index.php");
+    header("Location:/efuelwebapp/index.php");
 }

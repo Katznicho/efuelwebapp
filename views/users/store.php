@@ -77,13 +77,13 @@ if (isset($_POST['addUser'])) {
             //send email
             $message = "<P>You have been registered successfully to set your password <a href=" . $linkToSend . ">click here</a></P> ";
             $mailer->sendMail("CreditPlus", $_POST['email'], "Registered Successfully", $message);
-            $activity->logActivity(
-                $_SESSION['user'],
-                "Registered user ",
-                "user registered in sucessfully",
-                $_SESSION['email'],
-                $_SESSION['gender']
-            );
+            // $activity->logActivity(
+            //     $_SESSION['user'],
+            //     "Registered user ",
+            //     "user registered in sucessfully",
+            //     $_SESSION['email'],
+            //     $_SESSION['gender']
+            // );
 
             //redirect
             $_SESSION['success'] = "user Added Successfully";
