@@ -26,7 +26,7 @@ if (isset($_POST["reset"])) {
 
     $allbodaUser =  $dbAccess->select("bodauser", ["bodaUserName", "bodaUserPhoneNumber"], ["bodaUserId" => $bodaUserId]);
 
-    $messaage = "Hello " . $allbodaUser[0]["bodaUserName"] . " Your Pin has  been reset successfully on CreditPlus Dail *217*212# to update your pin  Remember your one time pin is " . $oneTymPin;
+    $messaage = "Hello " . $allbodaUser[0]["bodaUserName"] . " Your Pin has  been reset successfully on E-Fuel Dail *217# to update your pin  Remember your one time pin is " . $oneTymPin;
     $phone_numbers =    array($sms->formatMobileInternational($allbodaUser[0]["bodaUserPhoneNumber"]));
     $res = $sms->sms_faster($messaage , $phone_numbers , 1); 
 
