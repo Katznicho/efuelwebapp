@@ -6,10 +6,13 @@ require 'PHPMailerAutoload.php';
 
 class MyMail extends PHPMailer
 {
-    private $_host      = "server2.thinkxcloud.com";     //'your stmp server name'
-  private $_user      = "info@creditplus.ug";   //'your smtp username'
-  private $_password  = "W_!JPY%xGF3f";                 // 'your password'
-  private $_name      =  "Creditplus";
+  // private $_host      = "server2.thinkxcloud.com";     //'your stmp server name'
+  // private $_user      = "info@creditplus.ug";   //'your smtp username'
+  // private $_password  = "W_!JPY%xGF3f";                 // 'your password'
+  private $_host      = "smtp.gmail.com";     //'your stmp server name'
+  private $_user      = "katznicho@gmail.com";   //'your smtp username'
+  private $_password  = "uwbngqaxyzyzfyxc"; 
+  private $_name      =  "E-Fuel";
 
   // private $_host      = "smtp.gmail.com";     //'your stmp server name'
   // private $_user      = "katznicho@gmail.com";   //'your smtp username'

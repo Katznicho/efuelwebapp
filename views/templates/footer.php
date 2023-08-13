@@ -11,6 +11,8 @@
 
 </footer>
 
+
+
 <?php
 
 include_once '../templates/optimized_page_scripts.php';

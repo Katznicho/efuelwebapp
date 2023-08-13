@@ -77,7 +77,7 @@ class User extends DbAccess
             [
                 'name' => strtoupper($name),
                 'email' => $email,
-                'phoneNumber' =>formatPhoneNumber($phone),
+                'phoneNumber' =>$phone,
                 'gender' => $gender,
                 'roleId' => $roles,
                 "setPassword" => $hashedPass,
