@@ -21,8 +21,8 @@ try {
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_HTTPHEADER => array(
-                'Authorization: Basic YjdmNDIxMWEtMjRhYS00ZGViLWE5OTAtMTRkY2MxZjZiNTE0OjVlYmI3MGUwM2Y0YjQ3YmNmYWIwZDg3NTYxYWI1Yjhm',
-                'Cookie: PHPSESSID=esfgn34bf4dgcg15aeegc1eu89'
+                'Authorization: Basic NjExYjI2YzQtMmM2Yy00MDdjLWFlMjQtYzg2MDI5NDM0YjA0OjBiNzA2MmExNWZjOWE4NDE3ZDI1YmU4YmNmZGUxMWFj',
+                'Cookie: PHPSESSID=2mmajnr4lh0dkb11lnh5hopba6'
             ),
         ));
         $response = curl_exec($curl);
