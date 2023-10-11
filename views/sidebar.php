@@ -352,6 +352,32 @@
                         </ul>
                         <!--paymensts-->
 
+
+                        <!-- mojaloop -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-money-bill-wave"></i>
+                                <p>
+                                    Mojaloop
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/efuelwebapp/views/mojaloop/index.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Mojaloop</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/efuelwebapp/views/mojaloop/create.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Mojaloop</p>
+                                    </a>
+                                </li>
+                        <!-- mojaloop -->
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

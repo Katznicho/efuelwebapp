@@ -30,21 +30,13 @@ if (isset($_POST["activate"])) {
         header("Location:index.php");
     }
     $message = "Hello " . $allbodaUser[0]["bodaUserName"] . " Your  have been activated on E-Fuel Dail *217# to get started Remember your one time pin is " . $oneTymPin;
-    //die("done");
-    // $allbodaUser =  $dbAccess->select("bodauser", ["bodaUserName", "bodaUserPhoneNumber"], ["bodaUserId" => $bodaUserId]);
 
-    // $sms->sendsms(
-    //     $allbodaUser[0]["bodaUserName"],
-    //     $sms->formatMobileInternational($allbodaUser[0]["bodaUserPhoneNumber"]),
-        // "Hello " . $allbodaUser[0]["bodaUserName"] . " Your  have been activated on E-Fuel Dail *217*212# to get started Remember your one time pin is " . $oneTymPin
-    // );
-    
-    $res = $sms->sms_faster($message , array($sms->formatMobileInternational($allbodaUser[0]["bodaUserPhoneNumber"])), 1);
+
+    $res = $sms->sms_faster($message, array($sms->formatMobileInternational($allbodaUser[0]["bodaUserPhoneNumber"])), 1);
     if ($dbAccess->update("bodauser", ['bodaUserStatus' => '1', 'pin' => $hashedPin], ["bodaUserId" => $bodaUserId])) {
         $_SESSION['success'] = "Boda User has been activated successfully";
         header("Location:index.php");
     } else {
-        //die("There is an error please try again");
         $_SESSION['error'] = "Oops something occurred please contact support or try again";
         header("Location:index.php");
     }
