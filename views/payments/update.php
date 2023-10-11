@@ -4,9 +4,9 @@ include_once("sms.php");
 
 try {
     $dbAccess =  new DbAccess();
-    $sms =  new infobip();
+    $sms =  new sms();
     // get all payments where status is pending
-    $payments = $dbAccess->select("payments", [],['status'=>'pending']);
+    $payments = $dbAccess->select("payments", [], ['status' => 'pending']);
     //for each payment
     foreach ($payments as $payment) {
         $curl = curl_init();

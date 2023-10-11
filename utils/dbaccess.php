@@ -8,7 +8,7 @@ class DbAccess
     private $username = 'root';
     private $password = '';
 
-    //private $password = '!Log10tan10';
+
     private $database = 'bodacredit';
 
 
@@ -17,7 +17,7 @@ class DbAccess
     public function __construct()
     {
         $ip_address = $_SERVER['REMOTE_ADDR'];
-        
+
         if ($ip_address == '::1') {
 
             $this->password = "!Log19tan88";
@@ -42,7 +42,7 @@ class DbAccess
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
-        //mysqli_select_db($this->conn, $this->db_name);
+
 
         $this->mysqlKeyWords = ['CURRENT_TIMESTAMP'];
     }
@@ -242,7 +242,6 @@ class DbAccess
     public function delete($sql)
     {
         $query = mysqli_query($this->conn, $sql);
-        
     }
 
     public function clean($input)
@@ -289,66 +288,67 @@ class DbAccess
     /**
      * @method selectWithPagination
      * select data specifically for  datatable use
-     * **/ 
-    public function selectWithPagination($base_query , array $columns , array $limit ,array $extras = null , array $orderby = null ,  $searchParam = null ){
+     * **/
+    public function selectWithPagination($base_query, array $columns, array $limit, array $extras = null, array $orderby = null,  $searchParam = null)
+    {
 
         $output = array();
-        
-        $total = mysqli_num_rows(mysqli_query($this->conn , $base_query));
+
+        $total = mysqli_num_rows(mysqli_query($this->conn, $base_query));
 
 
-        if(!is_null($searchParam)){
-            
+        if (!is_null($searchParam)) {
+
             $base_query .= ' WHERE ';
 
-            foreach ($columns as $column){
-                if(!isset($extras[$column])) {
-                    $base_query .= $column . ' LIKE %'.$searchParam.'%  OR';
+            foreach ($columns as $column) {
+                if (!isset($extras[$column])) {
+                    $base_query .= $column . ' LIKE %' . $searchParam . '%  OR';
                 }
             }
 
-            $base_query  = rtrim($base_query , 'OR');
-        } 
-
-        if(!is_null($orderby)){
-
-            $base_query .= ' ORDER BY '.$orderby['column'] . ' '.$orderby['order'];
+            $base_query  = rtrim($base_query, 'OR');
         }
 
-        if($limit['length'] != -1) {
+        if (!is_null($orderby)) {
 
-            $base_query .=  ' LIMIT '.$limit['start'] . ','.$limit['length'];
+            $base_query .= ' ORDER BY ' . $orderby['column'] . ' ' . $orderby['order'];
+        }
+
+        if ($limit['length'] != -1) {
+
+            $base_query .=  ' LIMIT ' . $limit['start'] . ',' . $limit['length'];
         }
 
 
-        $query = mysqli_query($this->conn , $base_query);
+        $query = mysqli_query($this->conn, $base_query);
 
         $output['recordsTotal'] = $total;
 
-        $output['recordsFiltered'] = !is_null($searchParam)? mysqli_num_rows($query): 0;
+        $output['recordsFiltered'] = !is_null($searchParam) ? mysqli_num_rows($query) : 0;
 
-        $output['draw'] = $extras['draw'];     
-        
+        $output['draw'] = $extras['draw'];
+
         $output['data'] = array();
 
-        
-        while($row = mysqli_fetch_assoc($query)){
+
+        while ($row = mysqli_fetch_assoc($query)) {
 
             // $output['data'][] = $row;
 
             $dataSet = array();
 
-            foreach ($columns as $col){ 
+            foreach ($columns as $col) {
 
-                if(isset($row[$col])){ 
-                    if(isset($extras[$col])){
-                        $dataSet[] = call_user_func($extras[$col],$row);
-                    }else{
+                if (isset($row[$col])) {
+                    if (isset($extras[$col])) {
+                        $dataSet[] = call_user_func($extras[$col], $row);
+                    } else {
                         $dataSet[] = $row[$col];
                     }
                 }
-                if(isset($extras[$col])){
-                    $dataSet[] = call_user_func($extras[$col],$row);
+                if (isset($extras[$col])) {
+                    $dataSet[] = call_user_func($extras[$col], $row);
                 }
             }
 
@@ -358,15 +358,10 @@ class DbAccess
 
             $output['data'][] = $dataSet;
         }
-    
-      
+
+
 
 
         return $output;
-
-
-
-
-
     }
 }

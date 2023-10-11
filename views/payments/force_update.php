@@ -4,7 +4,7 @@ include_once("sms.php");
 
 try {
     $dbAccess =  new DbAccess();
-    $sms =  new infobip();
+    $sms =  new sms();
     // get all payments where status is pending
     $payments = $dbAccess->select("payments");
     //for each payment

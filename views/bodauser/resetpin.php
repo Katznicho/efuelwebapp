@@ -12,7 +12,7 @@ include_once("../../utils/sms.php");
 include_once("../../utils/pin.php");
 include_once("../../utils/dbaccess.php");
 
-$sms =  new infobip();
+$sms =  new sms();
 $pin =  new pin();
 $dbAccess = new DbAccess();
 
@@ -27,30 +27,23 @@ if (isset($_POST["reset"])) {
     $allbodaUser =  $dbAccess->select("bodauser", ["bodaUserName", "bodaUserPhoneNumber"], ["bodaUserId" => $bodaUserId]);
 
     $messaage = "Hello " . $allbodaUser[0]["bodaUserName"] . " Your Pin has  been reset successfully on E-Fuel Dail *217# to update your pin  Remember your one time pin is " . $oneTymPin;
-    $phone_numbers =    array($sms->formatMobileInternational($allbodaUser[0]["bodaUserPhoneNumber"]));
-    $res = $sms->sms_faster($messaage , $phone_numbers , 1); 
+
+
+    $res = $sms->sendSms($message, $sms->formatMobileInternational($allbodaUser[0]["bodaUserPhoneNumber"]));
 
 
     if ($dbAccess->update("bodauser", ['bodaUserStatus' => '1', 'pin' => $hashedPin], ["bodaUserId" => $bodaUserId])) {
         $_SESSION['success'] = "Pin has been reset successfully";
         //redirect to the bodauser details page
-        header("Location:bodauserdetails.php?bodadetails=".$bodaUserId);
+        header("Location:bodauserdetails.php?bodadetails=" . $bodaUserId);
         //header("Location:index.php");
     } else {
         //die("There is an error please try again");
         $_SESSION['error'] = "Oops something occurred please contact support or try again";
-        header("Location:bodauserdetails.php?bodadetails=".$bodaUserId);
-        
+        header("Location:bodauserdetails.php?bodadetails=" . $bodaUserId);
     }
 } else {
     //die("not id found please contact support ")
     $_SESSION['error'] = "Oops something occurred please contact support or try again";
-    header("Location:bodauserdetails.php?bodadetails=".$bodaUserId);
-
+    header("Location:bodauserdetails.php?bodadetails=" . $bodaUserId);
 }
-
-
-
-
-
-

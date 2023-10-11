@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 include_once("./dbaccess.php");
 
-class infobip
+class sms
 {
 
     public function formatMobileInternational($mobile)
@@ -63,7 +63,7 @@ class infobip
     //        // $to=256772093837;
 
     //        curl_setopt_array($curl, array(
-    //            CURLOPT_URL => "http://api.infobip.com/sms/1/text/single",
+    //            CURLOPT_URL => "http://api.sms.com/sms/1/text/single",
     //            CURLOPT_RETURNTRANSFER => true,
     //            CURLOPT_ENCODING => "",
     //            CURLOPT_MAXREDIRS => 10,
@@ -163,9 +163,9 @@ class infobip
     }
 }
 //
-//$infobip = new infobip();
+//$sms = new sms();
 //
-//$content = $infobip->sendmessageone("BULKSMS", "256772093837", "hello333 world");
+//$content = $sms->sendmessageone("BULKSMS", "256772093837", "hello333 world");
 // echo$content;
 // $decodedcontent=json_decode($content);
 // print_r($decodedcontent->messages[0]->to);

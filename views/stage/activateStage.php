@@ -14,7 +14,7 @@ include_once("../../utils/dbaccess.php");
 
 
 
-$sms =  new infobip();
+$sms =  new sms();
 $pin =  new pin();
 $dbAccess = new DbAccess();
 
